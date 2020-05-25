@@ -17,4 +17,5 @@
     <string name="location_permission_accuracy">For better search accuracy, please enabled location</string>
     <string name="location_error">There was an error getting your location, you can still search or interact with the map</string>
     <string name="invalid_word">Not a valid 3 word address, try e.g limit.broom.flip</string>
+    <string name="search_hint">Text or voice search for any 3 word address, e.g. limit.broom.flip</string>
 </resources>

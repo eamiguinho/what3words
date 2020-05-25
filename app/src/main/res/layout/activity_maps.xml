@@ -23,7 +23,7 @@
         android:layout_height="@dimen/main_l"
         android:layout_margin="@dimen/main_xxs"
         android:clickable="true"
-        android:elevation="@dimen/cardview_default_elevation"
+        android:elevation="@dimen/default_elevation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">

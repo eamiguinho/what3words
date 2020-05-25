@@ -22,4 +22,6 @@
 
     <!-- BUTTONS -->
     <dimen name="btn_height_s">40dp</dimen>
+
+    <dimen name="default_elevation">2dp</dimen>
 </resources>
