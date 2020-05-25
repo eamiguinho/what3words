@@ -33,6 +33,7 @@ class MapsActivity : DaggerAppCompatActivity(), OnMapReadyCallback {
         internal const val REQUEST_VIEW_SEARCH = 6001
         const val LOCATION_PERMISSION = 1001
         const val PINT_TO_RECT_ZOOM = 18.5f
+        const val DEFAULT_LOCATION_WORD = "look.tree.transit"
     }
 
     @Inject
@@ -152,6 +153,7 @@ class MapsActivity : DaggerAppCompatActivity(), OnMapReadyCallback {
                     }
                 }
             } ?: run {
+                viewModel.convertToCoordinates(DEFAULT_LOCATION_WORD)
                 main {
                     Snackbar.make(holderMap, R.string.location_error, Snackbar.LENGTH_LONG).show()
                 }
