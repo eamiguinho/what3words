@@ -14,3 +14,6 @@ Candidate: Emanuel Amiguinho
 ## Notes
 
 Used *MVVM* architecture, *Dagger2*, *Okhttp for WebSocket*, *Coroutines*, *LiveData*, *what3words wrapper*.
+
+## Demo
+[Click to watch demo](https://drive.google.com/file/d/18gqkqqNlf6iQQHNDd8Xrv6korJCuLIfH/view?usp=sharing)
