@@ -12,8 +12,8 @@ import com.example.w3wchallenge.extensions.io
 import com.example.w3wchallenge.extensions.ioThenMain
 import com.example.w3wchallenge.extensions.main
 import com.example.w3wchallenge.extensions.requestLocation
-import com.example.w3wchallenge.viewmodel.model.BaseVoiceMessagePayload
 import com.example.w3wchallenge.view.SearchActivity
+import com.example.w3wchallenge.viewmodel.model.BaseVoiceMessagePayload
 import com.example.w3wchallenge.viewmodel.model.SuggestionsPayload
 import com.example.w3wchallenge.viewmodel.model.SuggestionsUpdate
 import com.google.gson.Gson
@@ -36,6 +36,8 @@ class SearchViewModel @Inject constructor(
         const val RECORDING_RATE = 16000
         const val CHANNEL = AudioFormat.CHANNEL_IN_MONO
         const val FORMAT = AudioFormat.ENCODING_PCM_16BIT
+        const val VOICE_URL =
+            "wss://voiceapi.what3words.com/v1/autosuggest?key=${BuildConfig.W3W_API_KEY}&voice-language=en"
     }
 
     private var searchJob: Job? = null
@@ -73,8 +75,7 @@ class SearchViewModel @Inject constructor(
 
     fun handleAudioRecord() {
         io {
-            var url =
-                "wss://voiceapi.what3words.com/v1/autosuggest?key=${BuildConfig.W3W_API_KEY}&voice-language=en"
+            var url = VOICE_URL
             context.requestLocation()?.let {
                 url += "&focus=${it.latitude},${it.longitude}"
             }
