@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/holderSuggestion"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/main_xxs">
+
+    <TextView
+        android:id="@+id/textWords"
+        style="@style/TextDark.S.Medium"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="play.game.row" />
+
+    <ImageView
+        android:id="@+id/imageCountry"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textWords"
+        tools:text="United kingdom" />
+
+    <TextView
+        android:id="@+id/textDistance"
+        style="@style/TextDark.XS"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/main_xxs"
+        app:layout_constraintStart_toEndOf="@id/imageCountry"
+        app:layout_constraintTop_toBottomOf="@id/textWords"
+        tools:text="33km, near Lisbon" />
+</androidx.constraintlayout.widget.ConstraintLayout>

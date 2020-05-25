@@ -1,2 +1,2 @@
-# what3words
-what3words tech challenge
+# what3wordschallenge
+what3wordschallenge

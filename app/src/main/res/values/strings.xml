@@ -1,0 +1,20 @@
+<resources>
+    <string name="action_ok">OK</string>
+    <string name="action_allow">Allow</string>
+    <string name="action_dismiss">Dismiss</string>
+    <string name="app_name">What3words tech challenge</string>
+
+    <string name="permission_request_rationale_title">Permissions Required</string>
+    <string name="permission_request_rationale_message">This app requires certain permissions to function.</string>
+
+    <string name="distance_near">%dkm, near %s</string>
+    <string name="near">near %s</string>
+    <string name="w3w_word">///%s</string>
+    <string name="speak_now">Speak now…</string>
+    <string name="voice_error">There was an error using voice, try again later</string>
+    <string name="no_suggestions_found">Didn\'t match any 3 word addresses, please try again</string>
+    <string name="voice_permission">Permission needed to use voice search</string>
+    <string name="location_permission_accuracy">For better search accuracy, please enabled location</string>
+    <string name="location_error">There was an error getting your location, you can still search or interact with the map</string>
+    <string name="invalid_word">Not a valid 3 word address, try e.g limit.broom.flip</string>
+</resources>

@@ -1,0 +1,100 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="ButtonPrimary" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:minHeight">@dimen/btn_height_s</item>
+        <item name="android:backgroundTint">@color/primary</item>
+        <item name="android:textAppearance">@style/ButtonText.S</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="rippleColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="ButtonText" parent="TextAppearance.MaterialComponents.Button">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:letterSpacing">0.0</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="ButtonText.S">
+        <item name="android:textSize">@dimen/text_size_s</item>
+    </style>
+
+    <!-- DARK -->
+    <style name="TextDark">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/text_dark</item>
+    </style>
+
+    <style name="TextDark.XXL">
+        <item name="android:textSize">@dimen/text_size_xxl</item>
+    </style>
+
+    <style name="TextDark.XXL.Medium">
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="TextDark.XL">
+        <item name="android:textSize">@dimen/text_size_xl</item>
+        <item name="android:lineSpacingExtra">@dimen/text_line_spacing_extra_xl</item>
+    </style>
+
+    <style name="TextDark.XL.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextDark.XL.Medium">
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="TextDark.L">
+        <item name="android:textSize">@dimen/text_size_l</item>
+        <item name="android:lineSpacingExtra">@dimen/text_line_spacing_extra_l</item>
+    </style>
+
+    <style name="TextDark.L.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextDark.L.Medium">
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+
+    <style name="TextDark.M">
+        <item name="android:textSize">@dimen/text_size_m</item>
+        <item name="android:lineSpacingExtra">@dimen/text_line_spacing_extra_m</item>
+    </style>
+
+    <style name="TextDark.M.Medium">
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="TextDark.M.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextDark.M.Italic">
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="TextDark.S">
+        <item name="android:textSize">@dimen/text_size_s</item>
+    </style>
+
+    <style name="TextDark.S.Medium">
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="TextDark.XS">
+        <item name="android:textSize">@dimen/text_size_xs</item>
+    </style>
+</resources>
