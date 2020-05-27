@@ -17,6 +17,7 @@ import com.example.w3wchallenge.callback.SuggestionClickCallback
 import com.example.w3wchallenge.extensions.getViewModel
 import com.example.w3wchallenge.view.adapter.SuggestionsAdapter
 import com.example.w3wchallenge.viewmodel.SearchViewModel
+import com.example.w3wchallenge.viewmodel.SearchViewModel.Companion.W3W_REGEX
 import com.google.android.material.snackbar.Snackbar
 import com.what3words.javawrapper.response.Suggestion
 import dagger.android.support.DaggerAppCompatActivity
