@@ -31,7 +31,7 @@ class SearchViewModel @Inject constructor(
 ) : ViewModel() {
 
     companion object {
-        const val RECORDING_RATE = 16000
+        const val RECORDING_RATE = 44100
         const val CHANNEL = AudioFormat.CHANNEL_IN_MONO
         const val FORMAT = AudioFormat.ENCODING_PCM_16BIT
         const val W3W_REGEX =
