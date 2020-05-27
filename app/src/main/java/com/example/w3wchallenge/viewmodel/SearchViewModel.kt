@@ -36,6 +36,8 @@ class SearchViewModel @Inject constructor(
         const val RECORDING_RATE = 16000
         const val CHANNEL = AudioFormat.CHANNEL_IN_MONO
         const val FORMAT = AudioFormat.ENCODING_PCM_16BIT
+        const val W3W_REGEX =
+            "^/*[^0-9`~!@#$%^&*()+\\-_=\\[{\\}\\\\|'<,.>?/\";:£§º©®\\s]{1,}[・.。][^0-9`~!@#$%^&*()+\\-_=\\[{\\}\\\\|'<,.>?/\";:£§º©®\\s]{1,}[・.。][^0-9`~!@#$%^&*()+\\-_=\\[{\\}\\\\|'<,.>?/\";:£§º©®\\s]{1,}$"
         const val VOICE_URL =
             "wss://voiceapi.what3words.com/v1/autosuggest?key=${BuildConfig.W3W_API_KEY}&voice-language=en"
     }
@@ -52,7 +54,7 @@ class SearchViewModel @Inject constructor(
     fun autosuggest(newText: String) {
         searchJob?.cancel()
         searchJob = ioThenMain({
-            if (Pattern.compile(SearchActivity.W3W_REGEX).matcher(newText).find()) {
+            if (Pattern.compile(W3W_REGEX).matcher(newText).find()) {
                 val request = what3WordsV3.autosuggest(newText).nResults(5)
                 context.requestLocation()?.let {
                     request.focus(Coordinates(it.latitude, it.longitude))

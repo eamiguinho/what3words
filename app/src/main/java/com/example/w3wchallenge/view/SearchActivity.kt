@@ -31,8 +31,6 @@ class SearchActivity : DaggerAppCompatActivity(), SearchView.OnQueryTextListener
 
     companion object {
         const val EXTRA_KEY_WORD = "EXTRA_KEY_WORD"
-        const val W3W_REGEX =
-            "^/*[^0-9`~!@#$%^&*()+\\-_=\\[{\\}\\\\|'<,.>?/\";:£§º©®\\s]{1,}[・.。][^0-9`~!@#$%^&*()+\\-_=\\[{\\}\\\\|'<,.>?/\";:£§º©®\\s]{1,}[・.。][^0-9`~!@#$%^&*()+\\-_=\\[{\\}\\\\|'<,.>?/\";:£§º©®\\s]{1,}$"
         const val AUDIO_PERMISSION = 1002
     }
 
