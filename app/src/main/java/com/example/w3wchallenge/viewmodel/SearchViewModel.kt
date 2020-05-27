@@ -157,7 +157,7 @@ class SearchViewModel @Inject constructor(
                 RECORDING_RATE,
                 CHANNEL,
                 FORMAT,
-                bufferSize * 10
+                bufferSize
             ).also {
                 main {
                     val sound = MediaActionSound()
