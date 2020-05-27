@@ -16,15 +16,6 @@ import kotlinx.coroutines.tasks.await
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 
-fun <T : Any> ioThenMain(work: suspend (() -> T?), callback: ((T?) -> Unit)): Job {
-    return CoroutineScope(Dispatchers.Main).launch {
-        val data = CoroutineScope(Dispatchers.IO).async rt@{
-            return@rt work()
-        }.await()
-        callback(data)
-    }
-}
-
 fun io(work: suspend (() -> Unit)): Job {
     return CoroutineScope(Dispatchers.IO).launch {
         work()

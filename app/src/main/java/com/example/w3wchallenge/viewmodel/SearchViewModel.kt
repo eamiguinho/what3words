@@ -9,10 +9,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.w3wchallenge.BuildConfig
 import com.example.w3wchallenge.extensions.io
-import com.example.w3wchallenge.extensions.ioThenMain
 import com.example.w3wchallenge.extensions.main
 import com.example.w3wchallenge.extensions.requestLocation
-import com.example.w3wchallenge.view.SearchActivity
 import com.example.w3wchallenge.viewmodel.model.BaseVoiceMessagePayload
 import com.example.w3wchallenge.viewmodel.model.SuggestionsPayload
 import com.example.w3wchallenge.viewmodel.model.SuggestionsUpdate
@@ -53,26 +51,25 @@ class SearchViewModel @Inject constructor(
 
     fun autosuggest(newText: String) {
         searchJob?.cancel()
-        searchJob = ioThenMain({
+        searchJob = io {
             if (Pattern.compile(W3W_REGEX).matcher(newText).find()) {
                 val request = what3WordsV3.autosuggest(newText).nResults(5)
                 context.requestLocation()?.let {
                     request.focus(Coordinates(it.latitude, it.longitude))
                 }
-                request.execute()
-            } else null
-        }, {
-            it?.let {
-                suggestions.value = SuggestionsUpdate().apply {
-                    this.success = it.isSuccessful
-                    if (it.isSuccessful) {
-                        this.suggestions = it.suggestions
-                    } else {
-                        this.error = it.error.message
+                val res = request.execute()
+                main {
+                    suggestions.value = SuggestionsUpdate().apply {
+                        this.success = res.isSuccessful
+                        if (res.isSuccessful) {
+                            this.suggestions = res.suggestions
+                        } else {
+                            this.error = res.error.message
+                        }
                     }
                 }
             }
-        })
+        }
     }
 
     fun handleAudioRecord() {
@@ -132,7 +129,11 @@ class SearchViewModel @Inject constructor(
                     }
                 }
 
-                override fun onFailure(webSocket: WebSocket, t: Throwable, response: Response?) {
+                override fun onFailure(
+                    webSocket: WebSocket,
+                    t: Throwable,
+                    response: Response?
+                ) {
                     super.onFailure(webSocket, t, response)
                     stopAudio()
                 }
